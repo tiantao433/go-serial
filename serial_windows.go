@@ -18,6 +18,7 @@ package serial
 */
 
 import (
+	"errors"
 	"sync"
 	"syscall"
 	"time"
@@ -101,7 +102,8 @@ func (port *windowsPort) Read(p []byte) (int, error) {
 	}
 
 	// Timeout
-	return 0, nil
+	// return 0, nil
+	return 0, errors.New("Read Timeout")
 }
 
 func (port *windowsPort) Write(p []byte) (int, error) {
