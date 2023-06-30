@@ -18,7 +18,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"go.bug.st/serial/unixutils"
+	"github.com/tiantao433/go-serial/unixutils"
 	"golang.org/x/sys/unix"
 )
 
@@ -93,7 +93,7 @@ func (port *unixPort) Read(p []byte) (int, error) {
 		if !res.IsReadable(port.handle) {
 			// Timeout happened
 			// return 0, nil
-			return 0, errors.New("Read Timeout.")
+			return 0, errors.New("Read Timeout")
 		}
 		n, err := unix.Read(port.handle, p)
 		if err == unix.EINTR {
