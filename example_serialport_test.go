@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"log"
 
-	"go.bug.st/serial"
+	"github.com/tiantao433/go-serial"
 )
 
 func ExampleSerialPort_SetMode() {
